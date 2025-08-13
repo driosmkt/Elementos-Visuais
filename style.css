@@ -1,28 +1,73 @@
-/* Adicione este código ao seu arquivo CSS */
+/* =============================================================== */
+/* ESTILOS GERAIS E DE LAYOUT (NÃO PRECISA COPIAR SE JÁ TIVER)     */
+/* =============================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;700&display=swap');
 
-@keyframes spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+body {
+    background-color: #030712; /* Cor de fundo principal (bg-gray-950) */
+    color: #f3f4f6; /* Cor do texto principal (text-gray-100) */
+    font-family: 'Work Sans', sans-serif;
+    margin: 0;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHdpZHRoPSIyMCIgaGVpZhtPSIyMCIgZmlsbD0icmdiYSgwLCAyMDksIDI1NSwgMC4wNSkiPjwvcmVjdD48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjcGF0dGVybikiPjwvcmVjdD48L3N2Zz4=');
 }
 
+.container {
+    max-width: 1200px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.component-card {
+    background-color: rgba(17, 24, 39, 0.5); /* Cor de fundo dos cards de exemplo */
+    border: 1px solid rgba(34, 211, 238, 0.2);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    text-align: center;
+}
+
+h2 {
+    color: #22d3ee;
+    margin: 0;
+    font-size: 1.25rem;
+    border-bottom: 1px solid rgba(34, 211, 238, 0.3);
+    padding-bottom: 0.5rem;
+    width: 100%;
+}
+
+/* =============================================================== */
+/* --- EFEITO 1: ANEL GIRATÓRIO BRILHANTE (GLOW) ---               */
+/* =============================================================== */
+
+/* Animação que faz o elemento girar 360 graus */
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* O contêiner principal do anel */
 .security-badge {
-  width: 64px; /* 4rem */
-  height: 64px; /* 4rem */
-  padding: 2px;
-  border-radius: 9999px; /* rounded-full */
+  width: 80px;
+  height: 80px;
+  padding: 3px; /* Espessura do anel */
+  border-radius: 50%;
   position: relative;
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #111827; /* Cor de fundo do elemento interno (bg-gray-900) */
+  background: #111827;
 }
 
-/* Pseudo-elemento que cria o anel gradiente e giratório */
+/* O pseudo-elemento ::before é o truque! Ele cria o gradiente cônico que gira */
 .security-badge::before {
   content: '';
   position: absolute;
@@ -34,22 +79,150 @@
     from 0deg,
     transparent 0%,
     transparent 75%,
-    #22d3ee 100% /* Cor do brilho (cyan-400) */
+    #22d3ee /* Cor do brilho (cyan-400) */
   );
   animation: spin 2s linear infinite;
-  transform-origin: center center;
   transform: translate(-50%, -50%);
 }
 
+/* O miolo do anel, onde fica o ícone */
 .inner-badge {
   width: 100%;
   height: 100%;
   background-color: #111827; /* Cor de fundo (bg-gray-900) */
-  border-radius: 9999px; /* rounded-full */
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 10;
   color: #22d3ee; /* Cor do ícone (text-cyan-400) */
-  font-size: 1.5rem; /* text-2xl */
+  font-size: 1.8rem;
+}
+
+
+/* =============================================================== */
+/* --- EFEITO 2: PAINEL DE VIDRO (GLASSMORPHISM) ---               */
+/* =============================================================== */
+
+.glass-card {
+  background-color: rgba(17, 24, 39, 0.7); /* Fundo semi-transparente (bg-gray-900/70) */
+  backdrop-filter: blur(8px); /* Efeito de desfoque no fundo */
+  border: 1px solid rgba(34, 211, 238, 0.2); /* Borda ciano sutil (border-cyan-400/20) */
+  border-radius: 1rem; /* Bordas arredondadas (rounded-2xl) */
+  padding: 1.5rem;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+  width: 80%;
+}
+
+.glass-card h3 {
+    margin: 0 0 0.5rem 0;
+    color: white;
+    font-size: 1.25rem;
+}
+
+.glass-card p {
+    margin: 0;
+    color: #d1d5db; /* text-gray-300 */
+}
+
+/* =============================================================== */
+/* --- EFEITO 3: TEXTO E ELEMENTOS COM GRADIENTE ---               */
+/* =============================================================== */
+
+/* Classe para aplicar o gradiente em textos */
+.gradient-text {
+  background-image: linear-gradient(90deg, #22d3ee, #00ff87);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-size: 2.25rem;
+  font-weight: bold;
+}
+
+/* Classe para aplicar o gradiente em fundos (botões, barras, etc) */
+.cyber-gradient {
+  background-image: linear-gradient(90deg, #22d3ee, #00ff87);
+}
+
+/* Exemplo de uso em um botão */
+.cyber-gradient-button {
+  border: none;
+  color: #030712;
+  padding: 1rem 2rem;
+  border-radius: 9999px; /* rounded-full */
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: opacity 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.cyber-gradient-button:hover {
+  opacity: 0.9;
+}
+
+/* Exemplo de uso em uma barra de progresso */
+.progress-bar-container {
+    width: 80%;
+    height: 0.75rem;
+    background-color: #374151; /* bg-gray-700 */
+    border-radius: 9999px;
+}
+.progress-bar {
+    width: 75%;
+    height: 100%;
+    border-radius: 9999px;
+}
+
+
+/* =============================================================== */
+/* --- EFEITO 4: INDICADOR DE STATUS COM ANIMAÇÃO "PING" ---       */
+/* =============================================================== */
+
+/* Animação que cria o pulso */
+@keyframes ping {
+  75%, 100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+.status-indicator {
+  display: flex;
+  align-items: center;
+  font-family: monospace;
+  color: #22d3ee;
+  font-weight: bold;
+}
+
+.ping-container {
+  display: flex;
+  position: relative;
+  width: 0.75rem; /* Tamanho do ponto */
+  height: 0.75rem;
+  margin-right: 0.5rem;
+}
+
+/* Círculo que expande e some */
+.animate-ping {
+  position: absolute;
+  display: inline-flex;
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  background-color: #22d3ee; /* Cor do pulso */
+  opacity: 0.75;
+  animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+/* Círculo estático no centro */
+.ping-dot {
+  position: relative;
+  display: inline-flex;
+  border-radius: 50%;
+  height: 0.75rem;
+  width: 0.75rem;
+  background-color: #22d3ee; /* Cor do ponto */
 }
