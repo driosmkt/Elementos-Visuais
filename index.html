@@ -16,68 +16,134 @@
     <div class="container">
 
         <!-- =============================================================== -->
-        <!-- EFEITO 1: ANEL GIRATÓRIO BRILHANTE (GLOW)                       -->
+        <!-- PAINEL 1: PAINEL DE RESULTADOS (Com Scanline)                   -->
         <!-- =============================================================== -->
-        <!-- Para usar, copie o HTML abaixo e o CSS da seção "EFEITO 1". -->
-        
-        <div class="component-card">
-            <h2>1. Efeito de Anel Giratório</h2>
+        <div class="component-card full-width">
+            <h2>Painel de Resultados (Estilo 1)</h2>
             
-            <div class="security-badge">
-              <div class="inner-badge">
-                <i class="fas fa-lock"></i>
-              </div>
+            <!-- Adicione a classe "scanline-effect" para a animação da linha -->
+            <div class="glass-card scanline-effect">
+                
+                <!-- Cabeçalho do Painel -->
+                <div class="dashboard-header">
+                    <h3>Painel de Resultados</h3>
+                    <div class="status-indicator">
+                      <span class="ping-container">
+                        <span class="animate-ping"></span>
+                        <span class="ping-dot"></span>
+                      </span>
+                      AO VIVO
+                    </div>
+                </div>
+
+                <!-- Métricas -->
+                <div class="dashboard-metrics">
+                    <div class="metric-card">
+                        <p class="metric-title">VENDAS ESTE MÊS</p>
+                        <p class="metric-value">R$ 58.740</p>
+                        <div class="progress-bar-container">
+                            <div class="progress-bar cyber-gradient" style="width: 75%;"></div>
+                        </div>
+                    </div>
+                    <div class="metric-card">
+                        <p class="metric-title">META</p>
+                        <p class="metric-value">80%</p>
+                        <div class="progress-bar-container">
+                            <div class="progress-bar cyber-gradient" style="width: 80%;"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gráfico de Barras -->
+                <div class="chart-container">
+                    <div class="chart-bars">
+                        <div class="bar" style="height: 25%;"></div>
+                        <div class="bar" style="height: 55%;"></div>
+                        <div class="bar cyber-gradient" style="height: 90%;"></div>
+                        <div class="bar" style="height: 70%;"></div>
+                        <div class="bar" style="height: 40%;"></div>
+                    </div>
+                </div>
+
+                <!-- Rodapé do Painel -->
+                <div class="dashboard-footer">
+                    <p class="footer-text">VacinaExperts v5.2</p>
+                    <div class="footer-dots">
+                        <div class="dot green"></div>
+                        <div class="dot blue-light"></div>
+                        <div class="dot blue-dark"></div>
+                    </div>
+                </div>
             </div>
         </div>
 
         <!-- =============================================================== -->
-        <!-- EFEITO 2: PAINEL DE VIDRO (GLASSMORPHISM)                       -->
+        <!-- PAINEL 2: DASHBOARD DE CLÍNICA (Com Scanline e outro header)    -->
         <!-- =============================================================== -->
-        <!-- Para usar, copie o HTML abaixo e o CSS da seção "EFEITO 2". -->
+        <div class="component-card full-width">
+            <h2>Painel de Status (Estilo 2)</h2>
 
-        <div class="component-card">
-            <h2>2. Painel de Vidro</h2>
-        
-            <div class="glass-card">
-              <h3>Painel de Resultados</h3>
-              <p>Informações e métricas importantes.</p>
-            </div>
-        </div>
+            <!-- Adicione a classe "scanline-effect" para a animação da linha -->
+            <div class="glass-card scanline-effect">
+                
+                <!-- Cabeçalho Estilo "Janela de App" -->
+                <div class="window-header">
+                    <div class="window-dots">
+                        <div class="dot red"></div>
+                        <div class="dot yellow"></div>
+                        <div class="dot green"></div>
+                    </div>
+                    <div class="status-text">STATUS: <span class="online">ONLINE</span></div>
+                </div>
+                
+                <!-- Métricas (3 Colunas) -->
+                <div class="dashboard-metrics three-columns">
+                    <div class="metric-card">
+                        <p class="metric-title">AGENDAMENTOS</p>
+                        <p class="metric-value">1,248</p>
+                        <div class="progress-bar-container">
+                            <div class="progress-bar" style="width: 85%; background-color: #22d3ee;"></div>
+                        </div>
+                    </div>
+                    <div class="metric-card">
+                        <p class="metric-title">META</p>
+                        <p class="metric-value">92%</p>
+                        <div class="progress-bar-container">
+                            <div class="progress-bar" style="width: 92%; background-color: #22d3ee;"></div>
+                        </div>
+                    </div>
+                    <div class="metric-card">
+                        <p class="metric-title">SATISFAÇÃO</p>
+                        <p class="metric-value">4.8 <i class="fas fa-star" style="font-size: 1.25rem;"></i></p>
+                        <div class="progress-bar-container">
+                            <div class="progress-bar" style="width: 96%; background-color: #22d3ee;"></div>
+                        </div>
+                    </div>
+                </div>
 
-        <!-- =============================================================== -->
-        <!-- EFEITO 3: TEXTO E ELEMENTOS COM GRADIENTE                       -->
-        <!-- =============================================================== -->
-        <!-- Para usar, copie o HTML abaixo e o CSS da seção "EFEITO 3". -->
+                <!-- Gráfico de Barras -->
+                <div class="chart-container">
+                    <div class="chart-bars">
+                        <div class="bar" style="height: 30%;"></div>
+                        <div class="bar" style="height: 60%;"></div>
+                        <div class="bar" style="height: 75%;"></div>
+                        <div class="bar cyber-gradient" style="height: 100%;"></div>
+                        <div class="bar" style="height: 75%;"></div>
+                        <div class="bar" style="height: 50%;"></div>
+                    </div>
+                </div>
 
-        <div class="component-card">
-            <h2>3. Gradientes Neon</h2>
-            
-            <h1 class="gradient-text">Aumente suas Vendas</h1>
-
-            <div class="progress-bar-container">
-                <div class="progress-bar cyber-gradient"></div>
-            </div>
-
-            <button class="cyber-gradient-button">
-                <i class="fas fa-rocket"></i>
-                Botão com Gradiente
-            </button>
-        </div>
-
-        <!-- =============================================================== -->
-        <!-- EFEITO 4: INDICADOR DE STATUS COM ANIMAÇÃO "PING"               -->
-        <!-- =============================================================== -->
-        <!-- Para usar, copie o HTML abaixo e o CSS da seção "EFEITO 4". -->
-
-        <div class="component-card">
-            <h2>4. Indicador de Status "Ping"</h2>
-
-            <div class="status-indicator">
-              <span class="ping-container">
-                <span class="animate-ping"></span>
-                <span class="ping-dot"></span>
-              </span>
-              CONECTADO
+                <!-- Rodapé do Painel -->
+                <div class="dashboard-footer">
+                    <p class="footer-text">VacinaExperts DASHBOARD v5.2</p>
+                    <div class="status-indicator">
+                      <span class="ping-container">
+                        <span class="animate-ping"></span>
+                        <span class="ping-dot"></span>
+                      </span>
+                      CONECTADO
+                    </div>
+                </div>
             </div>
         </div>
 
