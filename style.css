@@ -1,5 +1,5 @@
 /* =============================================================== */
-/* ESTILOS GERAIS E DE LAYOUT (NÃO PRECISA COPIAR SE JÁ TIVER)     */
+/* ESTILOS GERAIS E DE LAYOUT                                      */
 /* =============================================================== */
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;700&display=swap');
 
@@ -18,7 +18,7 @@ body {
     max-width: 1200px;
     width: 100%;
     display: grid;
-    grid-template-columns: 1fr; /* Alterado para uma coluna */
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 2rem;
 }
 
@@ -35,7 +35,7 @@ body {
 }
 
 .full-width {
-    grid-column: 1 / -1; /* Faz o card ocupar a largura total */
+    grid-column: 1 / -1;
 }
 
 h2 {
@@ -47,19 +47,17 @@ h2 {
     width: 100%;
 }
 
-
 /* =============================================================== */
-/* --- NOVIDADE: ANIMAÇÃO SCANLINE ---                             */
+/* --- ANIMAÇÃO SCANLINE ---                                       */
 /* =============================================================== */
-
 @keyframes scanline-anim {
-  from { top: 0%; }
+  from { top: -10%; } /* Começa um pouco acima para um efeito mais suave */
   to { top: 100%; }
 }
 
 .scanline-effect {
     position: relative;
-    overflow: hidden; /* Essencial para a animação não vazar */
+    overflow: hidden;
 }
 
 .scanline-effect::after {
@@ -69,16 +67,14 @@ h2 {
     width: 100%;
     height: 2px;
     background: linear-gradient(to right, transparent, rgba(34, 211, 238, 0.5), transparent);
-    box-shadow: 0 0 5px rgba(34, 211, 238, 0.7);
-    animation: scanline-anim 4s linear infinite alternate; /* 'alternate' faz a animação ir e voltar */
-    z-index: 2; /* Para ficar sobre outros elementos */
+    box-shadow: 0 0 8px rgba(34, 211, 238, 0.7);
+    animation: scanline-anim 4s linear infinite alternate;
+    z-index: 2;
 }
 
-
 /* =============================================================== */
-/* --- ESTILOS DO PAINEL DE VIDRO (ATUALIZADO) ---                 */
+/* --- PAINEL DE VIDRO E DASHBOARD (MODELO 2) ---                  */
 /* =============================================================== */
-
 .glass-card {
   background-color: rgba(17, 24, 39, 0.8);
   backdrop-filter: blur(8px);
@@ -87,169 +83,63 @@ h2 {
   padding: 1rem;
   box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
   width: 100%;
-  box-sizing: border-box; /* Garante que padding não afete a largura total */
+  box-sizing: border-box;
 }
 
-/* Header do Painel 1 */
-.dashboard-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.5rem 1rem;
-    border-bottom: 1px solid rgba(34, 211, 238, 0.2);
-    margin-bottom: 1rem;
-}
-.dashboard-header h3 {
-    margin: 0;
-    font-size: 1.25rem;
-    color: white;
-}
-
-/* Header do Painel 2 (Estilo Janela) */
 .window-header {
-    background-color: #374151; /* bg-gray-700 */
+    background-color: #374151;
     padding: 0.5rem 1rem;
     border-radius: 0.5rem 0.5rem 0 0;
-    margin: -1rem -1rem 1rem -1rem; /* Alinha com as bordas do card */
+    margin: -1rem -1rem 1rem -1rem;
     display: flex;
     align-items: center;
     gap: 1rem;
 }
-.window-dots {
-    display: flex;
-    gap: 0.5rem;
-}
-.dot {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-}
+.window-dots { display: flex; gap: 0.5rem; }
+.dot { width: 12px; height: 12px; border-radius: 50%; }
 .dot.red { background-color: #ef4444; }
 .dot.yellow { background-color: #eab308; }
 .dot.green { background-color: #22c55e; }
-.status-text {
-    font-family: monospace;
-    color: #22d3ee;
-}
-.status-text .online {
-    color: #22c55e;
-}
+.status-text { font-family: monospace; color: #22d3ee; }
+.status-text .online { color: #22c55e; }
 
-/* Métricas */
-.dashboard-metrics {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
-    margin-bottom: 1rem;
-}
-.dashboard-metrics.three-columns {
-    grid-template-columns: repeat(3, 1fr);
-}
-.metric-card {
-    background-color: rgba(31, 41, 55, 0.8); /* bg-gray-800/80 */
-    border: 1px solid rgba(34, 211, 238, 0.2);
-    border-radius: 0.5rem;
-    padding: 0.75rem;
-    text-align: left;
-}
-.metric-title {
-    font-family: monospace;
-    font-size: 0.75rem;
-    color: #22d3ee;
-    margin: 0 0 0.25rem 0;
-}
-.metric-value {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: white;
-    margin: 0;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-.progress-bar-container {
-    width: 100%;
-    height: 0.25rem;
-    background-color: #374151; /* bg-gray-700 */
-    border-radius: 9999px;
-    margin-top: 0.5rem;
-}
-.progress-bar {
-    height: 100%;
-    border-radius: 9999px;
-}
-.cyber-gradient {
-  background-image: linear-gradient(90deg, #22d3ee, #00ff87);
-}
+.dashboard-metrics { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem; }
+.dashboard-metrics.three-columns { grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); }
+.metric-card { background-color: rgba(31, 41, 55, 0.8); border: 1px solid rgba(34, 211, 238, 0.2); border-radius: 0.5rem; padding: 0.75rem; text-align: left; }
+.metric-title { font-family: monospace; font-size: 0.75rem; color: #22d3ee; margin: 0 0 0.25rem 0; }
+.metric-value { font-size: 1.5rem; font-weight: bold; color: white; margin: 0; display: flex; align-items: center; gap: 0.5rem; }
 
-/* Gráfico de Barras */
-.chart-container {
-    background-color: rgba(31, 41, 55, 0.8);
-    border: 1px solid rgba(34, 211, 238, 0.2);
-    border-radius: 0.5rem;
-    padding: 1rem;
-    height: 160px; /* Altura fixa para o gráfico */
-    margin-bottom: 1rem;
-}
-.chart-bars {
-    display: flex;
-    align-items: flex-end; /* Alinha as barras na base */
-    gap: 0.5rem;
-    height: 100%;
-    width: 100%;
-}
-.bar {
-    flex-grow: 1; /* Faz as barras ocuparem o espaço igualmente */
-    background-color: rgba(34, 211, 238, 0.5);
-    border-radius: 4px 4px 0 0;
-    width: 100%;
-}
+.chart-container { background-color: rgba(31, 41, 55, 0.8); border: 1px solid rgba(34, 211, 238, 0.2); border-radius: 0.5rem; padding: 1rem; height: 160px; margin-bottom: 1rem; }
+.chart-bars { display: flex; align-items: flex-end; gap: 0.5rem; height: 100%; width: 100%; }
+.bar { flex-grow: 1; background-color: rgba(34, 211, 238, 0.5); border-radius: 4px 4px 0 0; width: 100%; }
 
-/* Rodapé do Painel */
-.dashboard-footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.5rem 1rem 0 1rem;
-    font-family: monospace;
-    font-size: 0.75rem;
-    color: #6b7280; /* text-gray-500 */
-}
-.footer-dots {
-    display: flex;
-    gap: 0.5rem;
-}
-.footer-dots .dot.green { background-color: #00ff87; }
-.footer-dots .dot.blue-light { background-color: rgba(34, 211, 238, 0.7); }
-.footer-dots .dot.blue-dark { background-color: rgba(34, 211, 238, 0.4); }
+.dashboard-footer { display: flex; justify-content: space-between; align-items: center; padding-top: 0.5rem; font-family: monospace; font-size: 0.75rem; color: #6b7280; }
 
 /* =============================================================== */
-/* --- EFEITO: INDICADOR DE STATUS "PING" ---                      */
+/* --- EFEITO 1: ANEL GIRATÓRIO BRILHANTE (GLOW) ---               */
 /* =============================================================== */
-@keyframes ping {
-  75%, 100% { transform: scale(2); opacity: 0; }
-}
-.status-indicator {
-  display: flex;
-  align-items: center;
-  font-family: monospace;
-  color: #22d3ee;
-  font-size: 0.75rem;
-  font-weight: bold;
-}
-.ping-container {
-  display: flex;
-  position: relative;
-  width: 0.5rem;
-  height: 0.5rem;
-  margin-right: 0.5rem;
-}
-.animate-ping {
-  position: absolute; display: inline-flex; height: 100%; width: 100%;
-  border-radius: 50%; background-color: #22d3ee; opacity: 0.75;
-  animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
-}
-.ping-dot {
-  position: relative; display: inline-flex; border-radius: 50%;
-  height: 0.5rem; width: 0.5rem; background-color: #22d3ee;
-}
+@keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+.security-badge { width: 80px; height: 80px; padding: 3px; border-radius: 50%; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; background: #111827; }
+.security-badge::before { content: ''; position: absolute; top: 50%; left: 50%; width: 150%; height: 150%; background: conic-gradient(from 0deg, transparent 0%, transparent 75%, #22d3ee); animation: spin 2s linear infinite; transform: translate(-50%, -50%); }
+.inner-badge { width: 100%; height: 100%; background-color: #111827; border-radius: 50%; display: flex; align-items: center; justify-content: center; z-index: 10; color: #22d3ee; font-size: 1.8rem; }
+
+/* =============================================================== */
+/* --- EFEITO 2: GRADIENTES NEON ---                               */
+/* =============================================================== */
+.gradient-text { background-image: linear-gradient(90deg, #22d3ee, #00ff87); -webkit-background-clip: text; background-clip: text; color: transparent; font-size: 2.25rem; font-weight: bold; }
+.cyber-gradient { background-image: linear-gradient(90deg, #22d3ee, #00ff87); }
+.cyber-gradient-button { border: none; color: #030712; padding: 1rem 2rem; border-radius: 9999px; font-weight: bold; font-size: 1rem; cursor: pointer; transition: opacity 0.3s; display: flex; align-items: center; gap: 0.5rem; }
+.cyber-gradient-button:hover { opacity: 0.9; }
+.progress-bar-container { width: 100%; max-width: 250px; height: 0.75rem; background-color: #374151; border-radius: 9999px; }
+.progress-bar { width: 75%; height: 100%; border-radius: 9999px; }
+
+/* =============================================================== */
+/* --- EFEITO 3: INDICADOR DE STATUS "PING" ---                    */
+/* =============================================================== */
+@keyframes ping { 75%, 100% { transform: scale(2); opacity: 0; } }
+.status-indicator { display: flex; align-items: center; font-family: monospace; color: #22d3ee; font-size: 0.75rem; font-weight: bold; }
+.status-indicator.large { font-size: 1rem; } /* Variação de tamanho para o card de exemplo */
+.ping-container { display: flex; position: relative; width: 0.5rem; height: 0.5rem; margin-right: 0.5rem; }
+.status-indicator.large .ping-container { width: 0.75rem; height: 0.75rem; }
+.animate-ping { position: absolute; display: inline-flex; height: 100%; width: 100%; border-radius: 50%; background-color: #22d3ee; opacity: 0.75; animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite; }
+.ping-dot { position: relative; display: inline-flex; border-radius: 50%; height: 100%; width: 100%; background-color: #22d3ee; }
