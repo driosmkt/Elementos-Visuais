@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exemplos de Efeitos Tech</title>
+    <title>Dashboard Tech Completo</title>
     
     <!-- Link para o arquivo CSS -->
     <link rel="stylesheet" href="style.css">
@@ -16,74 +16,13 @@
     <div class="container">
 
         <!-- =============================================================== -->
-        <!-- PAINEL 1: PAINEL DE RESULTADOS (Com Scanline)                   -->
+        <!-- PAINEL COMPLETO (MODELO 2)                                      -->
+        <!-- Este é o dashboard completo que você pediu.                   -->
         <!-- =============================================================== -->
         <div class="component-card full-width">
-            <h2>Painel de Resultados (Estilo 1)</h2>
-            
-            <!-- Adicione a classe "scanline-effect" para a animação da linha -->
-            <div class="glass-card scanline-effect">
-                
-                <!-- Cabeçalho do Painel -->
-                <div class="dashboard-header">
-                    <h3>Painel de Resultados</h3>
-                    <div class="status-indicator">
-                      <span class="ping-container">
-                        <span class="animate-ping"></span>
-                        <span class="ping-dot"></span>
-                      </span>
-                      AO VIVO
-                    </div>
-                </div>
+            <h2>Painel de Status da Clínica</h2>
 
-                <!-- Métricas -->
-                <div class="dashboard-metrics">
-                    <div class="metric-card">
-                        <p class="metric-title">VENDAS ESTE MÊS</p>
-                        <p class="metric-value">R$ 58.740</p>
-                        <div class="progress-bar-container">
-                            <div class="progress-bar cyber-gradient" style="width: 75%;"></div>
-                        </div>
-                    </div>
-                    <div class="metric-card">
-                        <p class="metric-title">META</p>
-                        <p class="metric-value">80%</p>
-                        <div class="progress-bar-container">
-                            <div class="progress-bar cyber-gradient" style="width: 80%;"></div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Gráfico de Barras -->
-                <div class="chart-container">
-                    <div class="chart-bars">
-                        <div class="bar" style="height: 25%;"></div>
-                        <div class="bar" style="height: 55%;"></div>
-                        <div class="bar cyber-gradient" style="height: 90%;"></div>
-                        <div class="bar" style="height: 70%;"></div>
-                        <div class="bar" style="height: 40%;"></div>
-                    </div>
-                </div>
-
-                <!-- Rodapé do Painel -->
-                <div class="dashboard-footer">
-                    <p class="footer-text">VacinaExperts v5.2</p>
-                    <div class="footer-dots">
-                        <div class="dot green"></div>
-                        <div class="dot blue-light"></div>
-                        <div class="dot blue-dark"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- =============================================================== -->
-        <!-- PAINEL 2: DASHBOARD DE CLÍNICA (Com Scanline e outro header)    -->
-        <!-- =============================================================== -->
-        <div class="component-card full-width">
-            <h2>Painel de Status (Estilo 2)</h2>
-
-            <!-- Adicione a classe "scanline-effect" para a animação da linha -->
+            <!-- A classe "scanline-effect" aplica a animação da linha de varredura -->
             <div class="glass-card scanline-effect">
                 
                 <!-- Cabeçalho Estilo "Janela de App" -->
@@ -144,6 +83,43 @@
                       CONECTADO
                     </div>
                 </div>
+            </div>
+        </div>
+
+        <!-- =============================================================== -->
+        <!-- EFEITOS INDIVIDUAIS PARA COPIAR                                 -->
+        <!-- Aqui estão os outros efeitos separados, como antes.             -->
+        <!-- =============================================================== -->
+        
+        <div class="component-card">
+            <h2>1. Efeito de Anel Giratório</h2>
+            <div class="security-badge">
+              <div class="inner-badge">
+                <i class="fas fa-lock"></i>
+              </div>
+            </div>
+        </div>
+
+        <div class="component-card">
+            <h2>2. Gradientes Neon</h2>
+            <h1 class="gradient-text">Aumente suas Vendas</h1>
+            <div class="progress-bar-container">
+                <div class="progress-bar cyber-gradient"></div>
+            </div>
+            <button class="cyber-gradient-button">
+                <i class="fas fa-rocket"></i>
+                Botão com Gradiente
+            </button>
+        </div>
+
+        <div class="component-card">
+            <h2>3. Indicador de Status "Ping"</h2>
+            <div class="status-indicator large">
+              <span class="ping-container">
+                <span class="animate-ping"></span>
+                <span class="ping-dot"></span>
+              </span>
+              CONECTADO
             </div>
         </div>
 
